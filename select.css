@@ -1,0 +1,51 @@
+.select {
+  position: relative;
+}
+.select ul {
+  width: 100%;
+  list-style: none;
+  max-width: 100%;
+  border-radius: 5px;
+  background: #fff;
+  display: none;
+  padding: 0;
+  position: absolute;
+  z-index: 999;
+  -webkit-box-shadow: 0 0 40px rgba(1, 1, 1, 0.1);
+          box-shadow: 0 0 40px rgba(1, 1, 1, 0.1);
+}
+.select ul li {
+  font-size: 17px;
+  line-height: 1.2;
+  color: #000;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.select ul li:first-child {
+  border-radius: 5px 5px 0 0;
+}
+.select ul li:last-child {
+  border-radius: 0 0 5px 5px;
+}
+.select ul li:hover {
+  background: #ebebeb;
+}
+.select ul.active {
+  display: block;
+}
+.select input {
+  outline: none;
+  border: none;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.select{
+  width: 300px;
+  max-width: 100%;
+}
