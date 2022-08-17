@@ -29,6 +29,34 @@ function select(selectContainerSelector) {
 		select.addEventListener('click', () => {
 			ul.classList.toggle('active');
 		})
+
+		searchOption(select.querySelectorAll('li') ,input, ul);
+	}
+
+	function searchOption(li, input, ul) {
+		input.addEventListener('input', () => {
+			li.forEach(item => {
+				item.classList.add('hide');
+
+				if (item.textContent.indexOf(input.value.trim()) == 0) {
+					item.classList.remove('hide');
+				}
+			})
+
+			const obj = document.querySelector('.no-option');
+
+			if (Array.from(li).every(item => item.classList.contains('hide'))) {
+				if (!obj) {
+					const noOption = document.createElement('div');
+
+					noOption.classList.add('no-option');
+					noOption.textContent = 'Нет результатов';
+					ul.appendChild(noOption);
+				}
+			}else if(obj){
+				obj.remove();
+			}
+		})
 	}
 
 	selectContainer.forEach(select => {
