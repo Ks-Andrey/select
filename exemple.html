@@ -20,7 +20,13 @@
 	</div>
 	<script type="text/javascript" src="select.js"></script>
 	<script type="text/javascript">
-		select('.select');
+		window.addEventListener('DOMContentLoaded', () => {
+			select({
+				selectContainerSelector: '.select',
+				search: true,
+				DataBase: 'selectDB.json'
+			});
+		})
 	</script>
 </body>
 </html>
